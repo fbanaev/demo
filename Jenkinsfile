@@ -2,7 +2,8 @@ pipeline {
     environment {
       IMAGE_BASE = 'demo'
       IMAGE_TAG = "v$BUILD_NUMBER"
-      IMAGE_NAME = "${env.IMAGE_BASE}:${env.IMAGE_TAG}"
+      DOCKER_REGISTRY_LOGIN = "exploit243"
+      IMAGE_NAME = "${env.DOCKER_REGISTRY_LOGIN}/${env.IMAGE_BASE}:${env.IMAGE_TAG}"
       IMAGE_NAME_LATEST = "${env.IMAGE_BASE}:latest"
       DOCKERFILE_NAME = "Dockerfile"
     }
